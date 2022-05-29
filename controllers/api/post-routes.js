@@ -21,12 +21,12 @@ router.get('/', (req, res) => {
           attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
           include: {
             model: User,
-            attributes: ['username', 'twitter', 'github']
+            attributes: ['username', 'email']
           }
         },
         {
           model: User,
-          attributes: ['username', 'twitter', 'github']
+          attributes: ['username', 'email']
         },
       ]
     })
@@ -52,14 +52,14 @@ router.get('/', (req, res) => {
         // include the Comment model here:
         {
           model: User,
-          attributes: ['username', 'twitter', 'github']
+          attributes: ['username', 'email']
         },
         {
           model: Comment,
           attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
           include: {
             model: User,
-            attributes: ['username', 'twitter', 'github']
+            attributes: ['username', 'email', ]
           }
         }
       ]
